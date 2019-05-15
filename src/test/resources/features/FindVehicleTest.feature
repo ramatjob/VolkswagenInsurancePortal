@@ -7,10 +7,13 @@
       And I enter "<Registration Number>" into the search box
       And I click on the Find Vehicle button
       Then I can verify the corresponding search vehicle details for "<Registration Number>"
+      Then I verify that the cover start date must be equal to "<Cover Start Date>"
+      Then I verify that the cover end date must be equal to "<Cover End Date>"
+      Then I verify that the Cover Start Date must be grater than Cover End Date
 
     Examples:
-      | Registration Number |
-      | OV12UYY             |
+      | Registration Number | Cover Start Date      | Cover End Date        |
+      | OV12UYY             | 09 FEB 2022 : 16 : 26 | 18 FEB 2022 : 23 : 59 |
 
 
     @Sanity @TestCase2

@@ -10,6 +10,8 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import org.openqa.selenium.WebDriver;
 
+import java.text.ParseException;
+
 public class FindVehicleSetpDefinition extends TestBase{
     WebDriver driver;
 
@@ -42,6 +44,21 @@ public class FindVehicleSetpDefinition extends TestBase{
     @Then("^I can verify the corresponding search vehicle details for \"([^\"]*)\"$")
     public void verifyTheVehicleDetails(String RegistrationNumber){
         volksWagenFinancialServicesPageObject.verifyTheSearchResult(RegistrationNumber);
+    }
+
+    @Then("^I verify that the cover start date must be equal to \"([^\"]*)\"$")
+    public void verifyTheCoverStartDate(String coverStartDate){
+        volksWagenFinancialServicesPageObject.verifyTheCoverStartDate(coverStartDate);
+    }
+
+    @Then("^I verify that the cover end date must be equal to \"([^\"]*)\"$")
+    public void verifyTheCoverEndDate(String coverEndDate){
+        volksWagenFinancialServicesPageObject.verifyTheCoverEndDate(coverEndDate);
+    }
+
+    @Then("^I verify that the Cover Start Date must be grater than Cover End Date$")
+    public void verifyCoverEndDateIsGraterThanCoverStartDate() throws ParseException {
+        volksWagenFinancialServicesPageObject.verifyCoverEndDateIsGraterThanCoverStartDate();
     }
 
     @Then("^I can see a valid \"([^\"]*)\"$")

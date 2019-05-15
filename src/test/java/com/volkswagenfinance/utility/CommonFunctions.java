@@ -8,12 +8,18 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.util.Date;
+
 public class CommonFunctions {
     WebDriver driver;
 
     public CommonFunctions(WebDriver driver){
         this.driver = driver;
-        //System.out.println("driver in CommonFunctions "+driver);
     }
 
     public void wait_explicit_till_element_loaded(By by){
@@ -61,6 +67,22 @@ public class CommonFunctions {
             finalResult = false;
         }
         return finalResult;
+    }
+
+    public long compareAnyTwoDates(String coverStartDate, String coverEndDate) throws ParseException {
+        SimpleDateFormat formatter = new SimpleDateFormat("dd MMM yyyy : hh : mm");
+        String dateInString1 = coverStartDate.trim();
+        Date startDate = formatter.parse(dateInString1);
+
+        LocalDateTime startDateTime = LocalDateTime.ofInstant(startDate.toInstant(), ZoneId.systemDefault());
+
+        String dateInString2 = coverEndDate.trim();
+        Date endDate = formatter.parse(dateInString2);
+
+        LocalDateTime endDateTime = LocalDateTime.ofInstant(endDate.toInstant(), ZoneId.systemDefault());
+
+        return Duration.between(startDateTime,endDateTime).toDays();
+
     }
 
 }

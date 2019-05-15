@@ -7,6 +7,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
+import java.text.ParseException;
+
 public class FindVehiclePage extends CommonFunctions {
 
     By VWFSMainTitleLocator = By.xpath(FindVehiclePageProperty.VWFSMainTitle);
@@ -60,7 +62,23 @@ public class FindVehiclePage extends CommonFunctions {
 
         String actualCoverEndDate = getAnyTextFromWebPage(CoverEndDateLocator);
         Assert.assertNotNull(actualCoverEndDate);
+    }
 
+    public void verifyTheCoverStartDate(String expectedCoverStartDate){
+        String actualCoverStartDate = getAnyTextFromWebPage(CoverStartDateLocator);
+        Assert.assertTrue(actualCoverStartDate.trim().equalsIgnoreCase(expectedCoverStartDate.trim()));
+    }
+
+    public void verifyTheCoverEndDate(String expectedCoverEndDate){
+        String actualCoverEndDate = getAnyTextFromWebPage(CoverEndDateLocator);
+        Assert.assertTrue(actualCoverEndDate.trim().equalsIgnoreCase(expectedCoverEndDate.trim()));
+    }
+
+    public void verifyCoverEndDateIsGraterThanCoverStartDate() throws ParseException {
+        String actualCoverStartDate = getAnyTextFromWebPage(CoverStartDateLocator);
+        String actualCoverEndDate = getAnyTextFromWebPage(CoverEndDateLocator);
+        Long days = compareAnyTwoDates(actualCoverStartDate,actualCoverEndDate);
+        Assert.assertTrue(days >= 1);
     }
 
     public void verifyWhenNoVehicleFoundDuringSearch(String expectedNoResultMessage){
