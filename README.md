@@ -5,7 +5,7 @@
 Download the project into your local machine using the below command
 
 ```
-git clone https://github.com/ramatjob/VolksWagenFinancialServicesTest.git
+git clone https://github.com/ramatjob/VolkswagenInsurancePortal.git
 ```
 
 Now in the command prompt, navigate to the folder, where you have cloned this project and run the below command
