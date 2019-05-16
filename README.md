@@ -17,12 +17,12 @@ mvn clean compile
 
 If you want to run the test scripts in WINDOWS machine, please run the below command in the command prompt
 ```
-mvn verify -Dprofile=runTestsInSequentialManner -Dbrowser=Chrome -DgridType=Local -DplatformType=WIN32 -Denvironment=qa
+mvn verify -Dprofile=runFindVehicleTests -DbrowserType=Chrome -DgridType=Local -DplatformType=WIN32 -DenvironmentType=qa
 ```
 
 If you want to run the test scripts in MAC machine, please run the below command in the command prompt
 ```
-mvn verify -Dprofile=runTestsInSequentialManner -DbrowserType=Chrome -DgridType=Local -DplatformType=WIN32 -DenvironmentType=qa
+mvn verify -Dprofile=runFindVehicleTests -DbrowserType=Chrome -DgridType=Local -DplatformType=WIN32 -DenvironmentType=qa
 ```
 
 ### How to check the reports ###

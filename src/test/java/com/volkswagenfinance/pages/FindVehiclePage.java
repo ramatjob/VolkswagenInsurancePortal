@@ -27,7 +27,6 @@ public class FindVehiclePage extends CommonFunctions {
     public FindVehiclePage(WebDriver driver){
         super(driver);
         this.driver = driver;
-        //System.out.println("driver in FastWiresSearchPage "+driver);
     }
 
     public void verifyThePageMainTitle(){
