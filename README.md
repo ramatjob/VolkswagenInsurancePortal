@@ -3,8 +3,11 @@
 ### Assumptions or Prerequisistes for this Project ###
 
 Please install chrome browser in your machine
+
 Please install Java 8 SDK in your machine and set the class path
+
 Please add cucumber for java plugin to your IDE (Intellij/Eclipse etc)
+
 Please add testNG plugin to your IDE (Intellij/Eclipse etc)
 
 ### How to compile this project ###
