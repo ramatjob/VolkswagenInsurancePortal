@@ -15,7 +15,7 @@ Please add testNG plugin to your IDE (Intellij/Eclipse etc)
 Download the project into your local machine using the below command
 
 ```
-git clone https://github.com/ramatjob/VolkswagenInsurancePortal.git
+git clone git@github.com:ramatjob/VolkswagenInsurancePortal.git
 ```
 
 Now in the command prompt, navigate to the folder (In my case, it is C:\MyProjects\VolkswagenInsurancePortal), where you have cloned this project and run the below command
